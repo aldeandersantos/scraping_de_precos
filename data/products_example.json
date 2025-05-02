@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Produto Exemplo",
+    "url": "https://www.kabum.com.br/produto/12345678/produto-exemplo",
+    "selector": ".sc-688f45-3.bGksFs.priceCard",
+    "threshold": 3000
+  }
+]
