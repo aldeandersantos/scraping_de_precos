@@ -11,7 +11,12 @@ def main():
 
     for product in products:
         print(f"Verificando: {product['name']}")
-        price = scrape_price(product['url'], product['selector'])
+        
+        selector = product.get('selector', None)
+        
+        custom_headers = product.get('headers', None)
+        
+        price = scrape_price(product['url'], selector, custom_headers)
 
         if price is None:
             print(f"Preço não encontrado para {product['name']}\n")
@@ -22,7 +27,7 @@ def main():
         else:
             print(f"{product['name']}: R$ {price} está acima do limite R$ {product['threshold']}\n")
 
-        time.sleep(2)  # pequeno delay para evitar bloqueios
+        time.sleep(2)
 
 if __name__ == '__main__':
     main()
